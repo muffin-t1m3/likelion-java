@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.HashMap;
 
-public class App {
+public class Main {
     public static void main(String[] args) throws IOException {
         HashMap<String, Account> accounts = new HashMap<>();
         accounts.put("Steve", new Account());
