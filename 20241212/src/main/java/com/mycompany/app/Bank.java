@@ -39,7 +39,7 @@ public class Bank {
         boolean isAlreadyExisting = false;
         do {
             Random random = new Random();
-            int randomNumber = 1000000 + random.nextInt(9000000);
+            int randomNumber = 10000 + random.nextInt(90000);
             accountId = Integer.toString(randomNumber);
 
             for (int i = 0; i < accounts.size(); i++) {
@@ -58,7 +58,7 @@ public class Bank {
             }
         }
         if (!isCreationSuccessful) {
-            throw new BankOperationException("Customer not found!");
+            throw new BankOperationException("Account not found!");
         }
     }
 
@@ -85,7 +85,7 @@ public class Bank {
                 return account;
             }
         }
-        throw new AccountNotFoundException("Customer not found!");
+        throw new AccountNotFoundException("Account not found!");
     }
 
     void listAccounts(String ownerId) {
