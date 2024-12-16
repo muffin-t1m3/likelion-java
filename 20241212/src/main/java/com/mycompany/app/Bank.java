@@ -14,7 +14,7 @@ public class Bank {
         customers = new ArrayList<>();
     }
 
-    int maximumAccountNumberForEachPerson = 3;
+    final int maximumAccountNumberForEachPerson = 3;
 
     void createCustomer(String ownerName) {
         String id = Integer.toString(customers.size());
@@ -51,8 +51,8 @@ public class Bank {
 
         // Create an account.
         boolean isCreationSuccessful = false;
-        for (int i = 0; i < customers.size(); i++) {
-            if (customers.get(i).getId().equals(ownerId)) {
+        for (Customer customer : customers) {
+            if (customer.getId().equals(ownerId)) {
                 accounts.add(new Account(accountId, ownerId));
                 isCreationSuccessful = true;
             }
